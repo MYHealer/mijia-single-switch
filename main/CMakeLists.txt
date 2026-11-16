@@ -1,0 +1,42 @@
+idf_component_register(
+    SRCS
+        "main.c"
+        "fsr.c"
+        "wifi_mgr.c"
+        "miot_client.c"
+        "miot_config.c"
+        "ble_switch.c"
+        "store.c"
+        "fcnt_store.c"
+        # ---- miot-ble-sdk（用户放入工程，路径 components 外层） ----
+        "../miot-ble-sdk-main/miot-ble-sdk-main/src/miot_spec.c"
+        "../miot-ble-sdk-main/miot-ble-sdk-main/src/miot_props.c"
+        "../miot-ble-sdk-main/miot-ble-sdk-main/src/miot_crypto.c"
+        "../miot-ble-sdk-main/miot-ble-sdk-main/src/miot_ag2.c"
+        "../miot-ble-sdk-main/miot-ble-sdk-main/src/miot_device.c"
+        "../miot-ble-sdk-main/miot-ble-sdk-main/src/miot_auth.c"
+        "../miot-ble-sdk-main/miot-ble-sdk-main/src/miot_profiles.c"
+        "../miot-ble-sdk-main/miot-ble-sdk-main/src/miot_beacon.c"
+        # ESP32 (mbedTLS) 加密后端
+        "../miot-ble-sdk-main/miot-ble-sdk-main/port/esp32/miot_port_esp32.c"
+    INCLUDE_DIRS
+        "."
+        "../miot-ble-sdk-main/miot-ble-sdk-main/include"
+        "../miot-ble-sdk-main/miot-ble-sdk-main/port/esp32"
+    PRIV_REQUIRES
+        nvs_flash
+        esp_wifi
+        esp_netif
+        esp_event
+        esp_timer
+        driver
+        esp_adc
+        esp_http_client
+        esp-tls
+        json
+        mbedtls
+        lwip
+        bt
+        esp_common
+        esp_hw_support
+)  # PSRAM 无

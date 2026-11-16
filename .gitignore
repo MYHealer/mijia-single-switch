@@ -1,0 +1,22 @@
+# 构建产物
+build/
+managed_components/
+dependencies.lock
+sdkconfig
+sdkconfig.old
+
+# 凭据（真实米家 session 值，绝不要提交；生成物也不入库）
+main/credentials_auto.h
+.runtime/
+
+# 本地编译/烧录临时日志
+build_*.txt
+flash_*.txt
+erase_log*.txt
+*.log
+
+# SDK 源码压缩包（目录已 vendored，zip 不入库）
+miot-ble-sdk-main.zip
+
+# 其它
+.vscode/
